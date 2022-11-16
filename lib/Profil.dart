@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_firsr/main.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'SignIn.dart';
 import 'Signup.dart';
 import 'SignupTel.dart';
@@ -28,12 +28,15 @@ class Profil extends StatelessWidget {
           backgroundColor: Colors.white,
           centerTitle: true,
         ),
+
         body: Center(
+
           child: Column(
               //mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 30),
-              Container(
+                Container(
+                child: Icon(FontAwesomeIcons.camera),
+                //SizedBox(height: 30),
                 width: 100.0,
                 height: 100.0,
                decoration: BoxDecoration(
@@ -124,9 +127,31 @@ class Profil extends StatelessWidget {
                     ),
                   ],
                 ),
-
-                SizedBox(height: 90.0,
+                SizedBox(height: 30.0,
                 ),
+
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    const SizedBox(width: 20.0, height: 100.0),
+                    DefaultTextStyle(
+                      style: const TextStyle(
+                          fontSize: 25.0,
+                          fontFamily: 'Horizon',
+                          color: Colors.black
+                      ),
+                      child: AnimatedTextKit(
+                        animatedTexts: [
+                          RotateAnimatedText('Retrouve tes favorites'),
+                          RotateAnimatedText('Consulte tes suivis'),
+                          RotateAnimatedText('Exprime ta créativité'),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+
+
                 SizedBox(width: 200.0,
                   child: Builder(
                     builder: (context) => ElevatedButton(
@@ -258,7 +283,7 @@ void _openPopup(context){
                     ),
                   ),
                   SizedBox(
-                    height: 140.0,
+                    height: 145.0,
                   ),
 
                   Text('En continuuant , tu acceptes nos Conditions',
@@ -382,7 +407,7 @@ void _openPopup2(context){
                             )
                         ),),
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                        padding: const EdgeInsets.fromLTRB(0.0, 2.0, 0.0, 2.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.min,
@@ -391,7 +416,7 @@ void _openPopup2(context){
                               flex: 1,
                               child: FaIcon(
                                 FontAwesomeIcons.user,
-                                color: Colors.blue,
+                                color: Colors.black,
                               ),
                             ),
                             Expanded(
@@ -427,7 +452,7 @@ void _openPopup2(context){
                             )
                         ),),
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                        padding: const EdgeInsets.fromLTRB(0.0, 2.0, 0.0, 2.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.min,
@@ -474,7 +499,7 @@ void _openPopup2(context){
                             )
                         ),),
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                        padding: const EdgeInsets.fromLTRB(0.0, 2.0, 0.0, 2.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.min,
@@ -483,7 +508,7 @@ void _openPopup2(context){
                               flex: 1,
                               child: FaIcon(
                                 FontAwesomeIcons.google,
-                                color: Colors.blue,
+                                color: Colors.red,
                               ),
                             ),
                             Expanded(
@@ -521,7 +546,7 @@ void _openPopup2(context){
                             )
                         ),),
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                        padding: const EdgeInsets.fromLTRB(0.0, 2.0, 0.0, 2.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.min,
@@ -568,7 +593,7 @@ void _openPopup2(context){
                             )
                         ),),
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                        padding: const EdgeInsets.fromLTRB(0.0, 2.0, 0.0, 2.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.min,
@@ -577,7 +602,7 @@ void _openPopup2(context){
                               flex: 1,
                               child: FaIcon(
                                 FontAwesomeIcons.instagram,
-                                color: Colors.blue,
+                                color: Colors.deepOrange,
                               ),
                             ),
                             Expanded(
@@ -596,7 +621,7 @@ void _openPopup2(context){
                     ),
                   ),
                   SizedBox(
-                    height: 10.0,
+                    height: 120.0,
                   ),
 
                   // le bas
@@ -614,7 +639,7 @@ void _openPopup2(context){
                     minWidth: 250.0,
                     child: ElevatedButton(
                       onPressed: () {
-                        _openPopup2(context);
+                        _openPopup(context);
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.white,
@@ -626,7 +651,7 @@ void _openPopup2(context){
                             )
                         ),),
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                        padding: const EdgeInsets.fromLTRB(0.0, 2.0, 0.0, 2.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.min,
@@ -643,6 +668,7 @@ void _openPopup2(context){
 
                                 ),
                               ),
+
                             ),
                           ],
                         ),

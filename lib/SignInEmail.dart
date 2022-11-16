@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:test_firsr/MdpTel.dart';
 
 import 'SignupBirth.dart';
 
@@ -15,7 +16,7 @@ class ConectEmail extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center, children: [
 
           TextFormField(
-            maxLength: 25,
+            maxLength: 10,
             decoration: const InputDecoration(
               //labelText: 'Champ de formulaire',
                 hintText: 'Entrer l\'email',
@@ -23,37 +24,32 @@ class ConectEmail extends StatelessWidget {
           ),
 
           TextFormField(
-            maxLength: 25,
+            maxLength: 10,
             decoration: const InputDecoration(
               //labelText: 'Champ de formulaire',
                 hintText: 'Mot de passe',
                 border: UnderlineInputBorder()),
           ),
 
-          GestureDetector(
-            onTap: () => {
-
-
-
-
-            },
-            child: Text('Mot de passe oublié ?', textAlign: TextAlign.center,
+          SizedBox(width: 100.0,
+            child: OutlinedButton(
+              onPressed: () => _dialogBuilder(context),
+              child: const Text('Mot de passe oublie', style: TextStyle(color: Colors.black), ),
             ),
           ),
 
-          SizedBox(
-            height: 20.0,
-          ),
 
-          SizedBox(width: 200.0,
+          SizedBox(width: 100.0,
             child: Builder(
               builder: (context) => ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     primary: Colors.red,
                     onPrimary: Colors.white),
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Birth(),),);
-                },
+                  onPressed: () {
+                    //_openPopup2(context);
+                  },
+
+               // onPressed: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) => Birth(),),);},
                 child: Text('Connexion'),
               ),
             ),
@@ -67,3 +63,46 @@ class ConectEmail extends StatelessWidget {
   }
 }
 
+
+Future<void> _dialogBuilder(BuildContext context) {
+  return showDialog<void>(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text(''),
+        content: InkWell(
+          child: const Text('Par Téléphone',
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),),
+          onTap: () =>{
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) =>const MdpTel(),)
+            ),
+          },
+        ),
+
+
+
+       // actions: <Widget>[
+          /*TextButton(
+            style: TextButton.styleFrom(
+              textStyle: Theme.of(context).textTheme.labelLarge,
+            ),
+            child: const Text('Disable'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+          TextButton(
+            style: TextButton.styleFrom(
+              textStyle: Theme.of(context).textTheme.labelLarge,
+            ),
+            child: const Text('Enable'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),*/
+        //],
+      );
+    },
+  );
+}

@@ -36,14 +36,27 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  #dependance pour lire les video
   video_player: ^2.4.7
+  #dependa,ce pour faire des slide
   carousel_slider: ^4.1.1
+  #dependance pour importer les icone de font_awesome:
   font_awesome_flutter: ^10.2.1
+  #Dependance pour avoir un champ de saisie de type phone number
   intl_phone_field: ^3.1.0
+  #dependance pour avoir les date et ainsi permettre a luser de pvwr selectionner juste
   flutter_cupertino_date_picker_fork: ^1.0.7
+
+  #depandance pour faire des annimations text
+  animated_text_kit: ^4.2.2
+  #icone de debut avant la premiere page
+  flutter_native_splash: ^2.2.14
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -67,7 +80,22 @@ flutter:
   assets:
     - assets/videos/
     - assets/images/
+    - assets/images/tikodc.png
   #
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/images/tikodc.png
+  color_dark: "#121212"
+  image_dark: assets/images/tikodc.png
+
+
+  android_12:
+    image: assets/images/tikodc.png
+    icon_background_color: "#ffffff"
+    image_dark: assets/logo-development.png
+    icon_background_color_dark: "#121212"
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

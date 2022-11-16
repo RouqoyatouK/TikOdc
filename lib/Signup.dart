@@ -15,7 +15,9 @@ class Signup extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: _title,
-      home: MyStatelessWidget(),
+      home: MyStatelessWidget(
+
+      ),
     );
   }
 }

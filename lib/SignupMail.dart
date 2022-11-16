@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'OPT.dart';
 import 'SignupBirth.dart';
 
 class Sign extends StatelessWidget {
@@ -18,7 +19,7 @@ class Sign extends StatelessWidget {
             maxLength: 25,
             decoration: const InputDecoration(
               //labelText: 'Champ de formulaire',
-                hintText: 'Numéro de téléphone',
+                hintText: 'Votre email',
                 border: UnderlineInputBorder()),
           ),
 
@@ -36,7 +37,7 @@ class Sign extends StatelessWidget {
                     primary: Colors.red,
                     onPrimary: Colors.white),
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Birth(),),);
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Otpform(),),);
                 },
                 child: Text('Suivant'),
               ),

@@ -30,11 +30,11 @@ class ConectTel extends StatelessWidget {
             width: 200.0,
             height: 50.0,
             child: Card(
-              color: Colors.grey,
+              color: Colors.red,
               child: Center(
                 child: Text(
                   'Envoyer un code',
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(color: Colors.white),
                 ), //Text
               ), //Center
             ), //Card

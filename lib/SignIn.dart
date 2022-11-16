@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:test_firsr/SignInEmail.dart';
 import 'package:test_firsr/SignInTel.dart';
 import 'package:test_firsr/SignupMail.dart';
@@ -31,10 +32,17 @@ class MyStatelessWidget extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Inscription', style: TextStyle(color: Colors.black),),
+
+          title: const Text('Connexion', style: TextStyle(color: Colors.black),),
           backgroundColor: Colors.white,
 
           centerTitle: true,
+          leading: IconButton(
+            icon: FaIcon(FontAwesomeIcons.close), color: Colors.black,
+            onPressed: () => {
+              Navigator.pop(context),
+            },
+          ),
           bottom: const TabBar(
 
             tabs: <Widget>[

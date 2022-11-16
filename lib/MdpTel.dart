@@ -9,10 +9,17 @@ class MdpTel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar( backgroundColor: Colors.white,
+        title: Text('MDP', style: TextStyle(color: Colors.white),
+        ),
+        centerTitle: true,
         leading: IconButton(
-          icon: FaIcon(FontAwesomeIcons.arrowLeft),
-          onPressed: () {  },
+          icon: FaIcon(FontAwesomeIcons.arrowLeft, color: Colors.black,), color: Colors.black,
+          onPressed: () {
+            Navigator.pop(context);
+
+          },
+
         ),
       ),
       body: Center(
@@ -20,6 +27,9 @@ class MdpTel extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center, children: [
 
           Text('Saisis ton numéro de téléphone', style: TextStyle(fontWeight: FontWeight.bold),),
+          SizedBox(
+            height: 10.0,
+          ),
           Text('Nous enverrons un code sur ton téléphone.'),
 
           SizedBox(
@@ -43,11 +53,11 @@ class MdpTel extends StatelessWidget {
             width: 200.0,
             height: 50.0,
             child: Card(
-              color: Colors.grey,
+              color: Colors.red,
               child: Center(
                 child: Text(
                   'Envoyer un code',
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(color: Colors.white),
                 ), //Text
               ), //Center
             ), //Card
